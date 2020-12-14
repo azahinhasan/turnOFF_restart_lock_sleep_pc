@@ -53,17 +53,17 @@ loopFor()
 if options == '1' and options3 == '1':
     print("Running..........")
     actionAfter(waitTime)
-    #os.system("shutdown /s /t 1")
+    os.system("shutdown /s /t 1")
 
 elif options == '2' and options3 == '1':
     print("Running..........")
     actionAfter(waitTime)
-    #os.system("shutdown /r /t 1")
+    os.system("shutdown /r /t 1")
 elif options == '3' and options3 == '1':
     print("Running..........")
     actionAfter(waitTime)
-    print("done")
-    #ctypes.windll.user32.LockWorkStation()
+    #print("done")
+    ctypes.windll.user32.LockWorkStation()
 
 else:
     exit()
