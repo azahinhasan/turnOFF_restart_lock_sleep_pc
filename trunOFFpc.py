@@ -6,8 +6,7 @@ import sys
 from ctypes import *
 from time import sleep
 
-#def lockActin():
-    #windll.user32.BlockInput(False)
+
 
 def loopFor(value):
     for i in range(value):
