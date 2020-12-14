@@ -86,16 +86,16 @@ def finalAction(options,waitTime):
 
     elif options == '2':
         print("Running..........")
-        actionAfter(waitTime,'PC Restart')
+        actionAfter(waitTime,'PC gonna Restart')
         os.system("shutdown /r /t 1")
     elif options == '3':
         print("Running..........")
-        actionAfter(waitTime,'Sceen Lock')
+        actionAfter(waitTime,'Sceen gonna Lock')
         #print("done")
         ctypes.windll.user32.LockWorkStation()
     elif options == '4':
         print("Running..........")
-        actionAfter(waitTime,'Sceen Lock')
+        actionAfter(waitTime,'PC gonna Sleep')
         #print("done")
         os.system("rundll32.exe powrprof.dll,SetSuspendState 0,1,0")
 
