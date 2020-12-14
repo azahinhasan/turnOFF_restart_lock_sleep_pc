@@ -17,9 +17,6 @@ def loopFor(value):
 def actionAfter(waitTime,actionName):
 
     totalTime = waitTime-1
-    loopFor(2)
-    print("Time Left: ")
-
     sys.stdout.flush()
     some_list = [0] * waitTime
     loopFor(5)
@@ -34,13 +31,15 @@ def actionAfter(waitTime,actionName):
     
 
 def actionName():
-    options = input("Chose your option: 1> ShutDown ::: 2> Restart ::: 3> Logout:-> ")
+    options = input("Chose your option: 1> ShutDown ::: 2> Restart ::: 3> Logout ::: 4> Sleep :-> ")
     if options == '1':
         return '1'
     elif options == '2':
         return '2'
     elif options == '3':
-        return '3' 
+        return '3'
+    elif options == '4':
+        return '4' 
     else:
         loopFor(2)
         print("Wrong Input!!!!!")
@@ -93,8 +92,13 @@ def finalAction(options,waitTime):
     elif options == '3':
         print("Running..........")
         actionAfter(waitTime,'Sceen Lock')
-        print("done")
-        #ctypes.windll.user32.LockWorkStation()
+        #print("done")
+        ctypes.windll.user32.LockWorkStation()
+    elif options == '4':
+        print("Running..........")
+        actionAfter(waitTime,'Sceen Lock')
+        #print("done")
+        os.system("rundll32.exe powrprof.dll,SetSuspendState 0,1,0")
 
 
 
@@ -109,7 +113,7 @@ loopFor(3)
 waitTime = actionTimeType()
 loopFor(3)
 
-options3 = input("Are you sure about the action? : 1> Yes ::: 2> No  :-> ")
+options3 = input("Are you sure about the action? : 1> Yes ::: AnyButton> No  :-> ")
 
 loopFor(3)
 if options3 == '1':
