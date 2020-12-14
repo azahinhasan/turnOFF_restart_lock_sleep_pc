@@ -16,7 +16,7 @@ def loopFor(value):
 
 def actionAfter(waitTime,actionName):
 
-    totalTime = waitTime
+    totalTime = waitTime-1
     print("Time Left: ")
     #for i in range(waitTime):      
     #    time.sleep(1)
@@ -26,8 +26,9 @@ def actionAfter(waitTime,actionName):
     sys.stdout.flush()
     some_list = [0] * waitTime
     loopFor(5)
-    for idx, item in enumerate(some_list):
-        msg = "%s in %i Sec....." % (actionName,idx)
+    for i in enumerate(some_list):
+        msg = "%s in %i Sec....." % (actionName,totalTime)
+        totalTime-=1
         sys.stdout.write(msg + chr(8) * len(msg))
         sys.stdout.flush()
         sleep(1)
@@ -65,17 +66,17 @@ loopFor(3)
 if options == '1' and options3 == '1':
     print("Running..........")
     actionAfter(waitTime,'Shutdown')
-    #os.system("shutdown /s /t 1")
+    os.system("shutdown /s /t 1")
 
 elif options == '2' and options3 == '1':
     print("Running..........")
     actionAfter(waitTime,'Restart')
-    #os.system("shutdown /r /t 1")
+    os.system("shutdown /r /t 1")
 elif options == '3' and options3 == '1':
     print("Running..........")
     actionAfter(waitTime,'Sceen Lock')
-    print("done")
-    #ctypes.windll.user32.LockWorkStation()
+    #print("done")
+    ctypes.windll.user32.LockWorkStation()
 
 else:
     exit()
