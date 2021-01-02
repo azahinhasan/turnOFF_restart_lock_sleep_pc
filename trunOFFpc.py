@@ -6,7 +6,9 @@ import sys
 import msvcrt
 from ctypes import *
 from time import sleep
-
+from colorama import init
+from colorama import Fore, Back, Style
+init(convert=True)
 
 
 def loopFor(value):
@@ -44,8 +46,10 @@ def actionName():
         exit() 
     else:
         loopFor(2)
+        print(Fore.RED)
         print("Wrong Input!!!!!")
         print("Try again....")
+        print(Style.RESET_ALL)
         return actionName()
 
 
@@ -61,8 +65,10 @@ def actionTimeType():
         exit() 
     else:
         loopFor(2)
+        print(Fore.RED)
         print("Wrong Input!!!")
         print("Try again....")
+        print(Style.RESET_ALL)
         loopFor(2)
         return actionTimeType()
 
@@ -125,8 +131,8 @@ def finalAction(options,waitTime):
     elif options == '3':
         print("Running..........")
         actionAfter(waitTime,'Sceen gonna Lock')
-        print("done")
-        #ctypes.windll.user32.LockWorkStation()
+        #print("done")
+        ctypes.windll.user32.LockWorkStation()
     elif options == '4':
         print("Running..........")
         actionAfter(waitTime,'PC gonna Sleep')
@@ -142,10 +148,23 @@ def finalAction(options,waitTime):
 #main
 
 options = actionName()
+
 loopFor(3)
+print(Fore.RED)
+print(Back.WHITE)
 print("[...For Exiting or Stop the loop press e/E and Enter]")
+print(Style.RESET_ALL)
 loopFor(3)
+
 waitTime = actionTimeType()
+
+loopFor(3)
+print(Fore.RED)
+print(Back.WHITE)
+print("[...For Stoping the Countdown You have to Close the Terminal]")
+print("[...Wanna Pause the Countdown? Click on the Terminal..]")
+print("[...Wanna Resume the Countdown? Press Enter..]")
+print(Style.RESET_ALL)
 loopFor(3)
 
 options3 = input("Are you sure about the action? : 1> Yes ::: AnyButton> No  :-> ")
