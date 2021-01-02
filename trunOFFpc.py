@@ -33,7 +33,9 @@ def actionAfter(waitTime,actionName):
     
 
 def actionName():
+    
     options = input("Chose your option: 1> ShutDown ::: 2> Restart ::: 3> Logout ::: 4> Sleep :-> ")
+    message1()
     if options == '1':
         return '1'
     elif options == '2':
@@ -45,11 +47,7 @@ def actionName():
     elif options == 'e' or options == 'E':
         exit() 
     else:
-        loopFor(2)
-        print(Fore.RED)
-        print("Wrong Input!!!!!")
-        print("Try again....")
-        print(Style.RESET_ALL)
+        invalidMessage(1)
         return actionName()
 
 
@@ -64,12 +62,7 @@ def actionTimeType():
     elif options == 'e' or options == 'E':
         exit() 
     else:
-        loopFor(2)
-        print(Fore.RED)
-        print("Wrong Input!!!")
-        print("Try again....")
-        print(Style.RESET_ALL)
-        loopFor(2)
+        invalidMessage(1)
         return actionTimeType()
 
 
@@ -83,10 +76,7 @@ def actonTimeDuration(options2):
         elif waitTime == 'e' or waitTime == 'E':
             exit() 
         else:
-            loopFor(2)
-            print("Invalid Input!!!")
-            print("Please Input a Intiger..")
-            loopFor(2)
+            invalidMessage(2)
             return actonTimeDuration('1')
         
     elif options2 == '2':
@@ -96,10 +86,7 @@ def actonTimeDuration(options2):
         elif waitTime == 'e' or waitTime == 'E':
             exit() 
         else:
-            loopFor(2)
-            print("Invalid Input!!!")
-            print("Please Input a Intiger..")
-            loopFor(2)
+            invalidMessage(2)
             return actonTimeDuration('2')
     elif options2 == '3':
         waitTime= input("Secound :-> ")
@@ -108,10 +95,7 @@ def actonTimeDuration(options2):
         elif waitTime == 'e' or waitTime == 'E':
             exit() 
         else:
-            loopFor(2)
-            print("Invalid Input!!!")
-            print("Please Input a Intiger..")
-            loopFor(2)
+            invalidMessage(2)
             return actonTimeDuration('3')
 
     return waitTime
@@ -142,34 +126,46 @@ def finalAction(options,waitTime):
 
 
 
+def  message1():
+    loopFor(3)
+    print(Fore.RED)
+    print(Back.WHITE)
+    print("[...For Exiting or Stop the loop press e/E and Enter]")
+    print(Style.RESET_ALL)
+    loopFor(3)
 
+def message2():
+    loopFor(3)
+    print(Fore.RED)
+    print(Back.WHITE)
+    print("[...For Stoping the Countdown You have to Close the Terminal]")
+    print("[...Wanna Pause the Countdown? Click on the Terminal..]")
+    print("[...Wanna Resume the Countdown? Press Enter..]")
+    print(Style.RESET_ALL)
+    loopFor(3)
 
-
+def invalidMessage(value):
+    print(Fore.RED)
+    if value == 1:
+        loopFor(2)
+        print("Wrong Input!!!")
+        print("Try again....")
+        loopFor(2)
+    elif value == 2:
+        loopFor(2)
+        print("Invalid Input!!!")
+        print("Please Input a Intiger..")
+        loopFor(2)
+    print(Style.RESET_ALL)
 #main
 
 options = actionName()
-
 loopFor(3)
-print(Fore.RED)
-print(Back.WHITE)
-print("[...For Exiting or Stop the loop press e/E and Enter]")
-print(Style.RESET_ALL)
-loopFor(3)
-
 waitTime = actionTimeType()
-
 loopFor(3)
-print(Fore.RED)
-print(Back.WHITE)
-print("[...For Stoping the Countdown You have to Close the Terminal]")
-print("[...Wanna Pause the Countdown? Click on the Terminal..]")
-print("[...Wanna Resume the Countdown? Press Enter..]")
-print(Style.RESET_ALL)
-loopFor(3)
-
 options3 = input("Are you sure about the action? : 1> Yes ::: AnyButton> No  :-> ")
+message2()
 
-loopFor(3)
 if options3 == '1':
     finalAction(options,waitTime)
 else:
