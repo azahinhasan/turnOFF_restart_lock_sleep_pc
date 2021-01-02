@@ -58,6 +58,7 @@ def actionTimeType():
         loopFor(2)
         print("Wrong Input!!!")
         print("Try again....")
+        loopFor(2)
         return actionTimeType()
 
 
@@ -72,7 +73,7 @@ def actonTimeDuration(options2):
             loopFor(2)
             print("Invalid Input!!!")
             print("Please Input a Intiger..")
-            loopFor(3)
+            loopFor(2)
             return actonTimeDuration('1')
         
     elif options2 == '2':
@@ -83,7 +84,7 @@ def actonTimeDuration(options2):
             loopFor(2)
             print("Invalid Input!!!")
             print("Please Input a Intiger..")
-            loopFor(3)
+            loopFor(2)
             return actonTimeDuration('2')
     elif options2 == '3':
         waitTime= input("Secound :-> ")
@@ -93,7 +94,7 @@ def actonTimeDuration(options2):
             loopFor(2)
             print("Invalid Input!!!")
             print("Please Input a Intiger..")
-            loopFor(3)
+            loopFor(2)
             return actonTimeDuration('3')
 
     return waitTime
