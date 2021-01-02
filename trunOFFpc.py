@@ -43,7 +43,7 @@ def actionName():
         loopFor(2)
         print("Wrong Input!!!!!")
         print("Try again....")
-        actionName()
+        return actionName()
 
 
 def actionTimeType():
@@ -58,7 +58,7 @@ def actionTimeType():
         loopFor(2)
         print("Wrong Input!!!!!")
         print("Try again....")
-        actionTimeType()
+        return actionTimeType()
 
 
 def actonTimeDuration(options2):
@@ -66,13 +66,26 @@ def actonTimeDuration(options2):
     waitTime=0
     if options2 == '1':
         waitTime= input("Hours :-> ")
-        waitTime=int(waitTime)*60*60
+        if waitTime.isnumeric()== True:
+            waitTime=int(waitTime)*60*60
+        else:
+            print("Invalid Input...")
+            print("Please Input a Intiger..")
+            loopFor(3)
+            return actonTimeDuration('1')
+        
     elif options2 == '2':
         waitTime= input("Minutes :-> ")
-        waitTime=int(waitTime)*60
+        if waitTime.isnumeric()== True:
+            waitTime=int(waitTime)*60
+        else:
+            return actonTimeDuration('2')
     elif options2 == '3':
         waitTime= input("Secound :-> ")
-        waitTime=int(waitTime)
+        if waitTime.isnumeric()== True:
+            waitTime=int(waitTime)
+        else:
+            return actonTimeDuration('3')
 
     return waitTime
 
@@ -87,17 +100,17 @@ def finalAction(options,waitTime):
     elif options == '2':
         print("Running..........")
         actionAfter(waitTime,'PC gonna Restart')
-        os.system("shutdown /r /t 1")
+        #os.system("shutdown /r /t 1")
     elif options == '3':
         print("Running..........")
         actionAfter(waitTime,'Sceen gonna Lock')
-        #print("done")
-        ctypes.windll.user32.LockWorkStation()
+        print("done")
+        #ctypes.windll.user32.LockWorkStation()
     elif options == '4':
         print("Running..........")
         actionAfter(waitTime,'PC gonna Sleep')
         #print("done")
-        os.system("rundll32.exe powrprof.dll,SetSuspendState 0,1,0")
+        #os.system("rundll32.exe powrprof.dll,SetSuspendState 0,1,0")
 
 
 
@@ -119,6 +132,3 @@ if options3 == '1':
     finalAction(options,waitTime)
 else:
     exit()
-
-
-
