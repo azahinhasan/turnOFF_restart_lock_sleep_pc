@@ -3,6 +3,7 @@ import os
 import time
 import ctypes 
 import sys
+import msvcrt
 from ctypes import *
 from time import sleep
 
@@ -38,7 +39,9 @@ def actionName():
     elif options == '3':
         return '3'
     elif options == '4':
-        return '4' 
+        return '4'
+    elif options == 'e' or options == 'E':
+        exit() 
     else:
         loopFor(2)
         print("Wrong Input!!!!!")
@@ -53,7 +56,9 @@ def actionTimeType():
     elif options == '2':
         return actonTimeDuration('2') 
     elif options == '3':
-        return actonTimeDuration('3') 
+        return actonTimeDuration('3')
+    elif options == 'e' or options == 'E':
+        exit() 
     else:
         loopFor(2)
         print("Wrong Input!!!")
@@ -69,6 +74,8 @@ def actonTimeDuration(options2):
         waitTime= input("Hours :-> ")
         if waitTime.isnumeric()== True:
             waitTime=int(waitTime)*60*60
+        elif waitTime == 'e' or waitTime == 'E':
+            exit() 
         else:
             loopFor(2)
             print("Invalid Input!!!")
@@ -80,6 +87,8 @@ def actonTimeDuration(options2):
         waitTime= input("Minutes :-> ")
         if waitTime.isnumeric()== True:
             waitTime=int(waitTime)*60
+        elif waitTime == 'e' or waitTime == 'E':
+            exit() 
         else:
             loopFor(2)
             print("Invalid Input!!!")
@@ -90,6 +99,8 @@ def actonTimeDuration(options2):
         waitTime= input("Secound :-> ")
         if waitTime.isnumeric()== True:
             waitTime=int(waitTime)
+        elif waitTime == 'e' or waitTime == 'E':
+            exit() 
         else:
             loopFor(2)
             print("Invalid Input!!!")
@@ -110,7 +121,7 @@ def finalAction(options,waitTime):
     elif options == '2':
         print("Running..........")
         actionAfter(waitTime,'PC gonna Restart')
-        #os.system("shutdown /r /t 1")
+        os.system("shutdown /r /t 1")
     elif options == '3':
         print("Running..........")
         actionAfter(waitTime,'Sceen gonna Lock')
@@ -120,7 +131,7 @@ def finalAction(options,waitTime):
         print("Running..........")
         actionAfter(waitTime,'PC gonna Sleep')
         #print("done")
-        #os.system("rundll32.exe powrprof.dll,SetSuspendState 0,1,0")
+        os.system("rundll32.exe powrprof.dll,SetSuspendState 0,1,0")
 
 
 
@@ -131,6 +142,8 @@ def finalAction(options,waitTime):
 #main
 
 options = actionName()
+loopFor(3)
+print("[...For Exiting or Stop the loop press e/E and Enter]")
 loopFor(3)
 waitTime = actionTimeType()
 loopFor(3)
