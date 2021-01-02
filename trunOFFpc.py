@@ -69,7 +69,8 @@ def actonTimeDuration(options2):
         if waitTime.isnumeric()== True:
             waitTime=int(waitTime)*60*60
         else:
-            print("Invalid Input...")
+            loopFor(2)
+            print("Invalid Input!!!")
             print("Please Input a Intiger..")
             loopFor(3)
             return actonTimeDuration('1')
