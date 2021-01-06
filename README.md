@@ -7,11 +7,11 @@ Buind on:
 >pip 20.2.3
 
 
-Steps for Runing this Program:
+## Steps for Runing this Program:
 
--1st : Download Python 3.9 or better from https://www.python.org/downloads/   and Install it.........
--2nd : Download pip and Install : https://www.liquidweb.com/kb/install-pip-windows/
--3rd : Install pip_colorama by typing on CMD : pip install colorama 
+* 1st : Download Python 3.9 or better from https://www.python.org/downloads/   and Install it.........
+* 2nd : Download pip and Install : https://www.liquidweb.com/kb/install-pip-windows/
+* 3rd : Install pip_colorama by typing on CMD : pip install colorama 
 
 
 
