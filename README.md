@@ -8,7 +8,7 @@
 
 
 ## Follow this Steps to Run this Program:
-####(if you already done any of them you no need to run them again)
+#### if you already done any of them you no need to run them again
 * 1st : Download [Python 3.9] or better from https://www.python.org/downloads/  and Install it.
 * 2nd : Download pip and Install : https://www.liquidweb.com/kb/install-pip-windows/
 * 3rd : Install pip_colorama by typing on CMD : pip install colorama 
