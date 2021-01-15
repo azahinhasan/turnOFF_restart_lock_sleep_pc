@@ -34,7 +34,7 @@ def actionAfter(waitTime,actionName):
 
 def actionName():
     
-    options = input("Chose your option: 1> ShutDown ::: 2> Restart ::: 3> Logout ::: 4> Sleep :-> ")
+    options = input("Chose your option: 1> ShutDown ::: 2> Restart ::: 3> Lock ::: 4> Sleep :-> ")
     message1()
     if options == '1':
         return '1'
@@ -46,6 +46,8 @@ def actionName():
         return '4'
     elif options == 'e' or options == 'E':
         exit() 
+    #elif options == 'p' or options == 'P':
+        #return previousAction(0)
     else:
         invalidMessage(1)
         return actionName()
@@ -61,6 +63,8 @@ def actionTimeType():
         return actonTimeDuration('3')
     elif options == 'e' or options == 'E':
         exit() 
+    #elif options == 'p' or options == 'P':
+        #return previousAction(0)
     else:
         invalidMessage(1)
         return actionTimeType()
@@ -92,11 +96,13 @@ def actonTimeDuration(options2):
         waitTime= input("Secound :-> ")
         if waitTime.isnumeric()== True:
             waitTime=int(waitTime)
-        elif waitTime == 'e' or waitTime == 'E':
-            exit() 
-        else:
-            invalidMessage(2)
-            return actonTimeDuration('3')
+    elif waitTime == 'e' or waitTime == 'E':
+        exit() 
+    #elif options == 'p' or options == 'P':
+        #return previousAction(1)
+    else:
+        invalidMessage(2)
+        return actonTimeDuration('3')
 
     return waitTime
 
@@ -123,6 +129,12 @@ def finalAction(options,waitTime):
         #print("done")
         os.system("rundll32.exe powrprof.dll,SetSuspendState 0,1,0")
 
+
+def previousAction(value):
+    if value == 0:
+        return actionName()
+    elif value == 1:
+       return actionTimeType()
 
 
 
