@@ -103,4 +103,9 @@ After fixing pip, you can use `build_exe.bat` which now uses `python -m pip` aut
 
 ---
 
+## Screenshot
+<img width="541" height="779" alt="image" src="https://github.com/user-attachments/assets/21f3b76a-5aaa-4b79-8966-34795e9e61d6" />
+
+
+
 **Note:** This application is designed exclusively for Windows operating systems.
